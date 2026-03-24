@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividades del Curso – Geografía del Ecuador – Licencia Tipo E</title>
+
+  <!-- ============================================================
+       RECURSO EDUCATIVO MOODLE
+       Asignatura : Geografía del Ecuador
+       Sección    : Actividades del Curso
+       Proceso    : Licencia Tipo E – Conducción Profesional
+       Institución: Sindicato Provincial de Choferes Profesionales de Manabí
+       Versión    : 1.0
+       Compatibilidad: HTML5 puro + CSS interno (sin frameworks externos)
+       ============================================================ -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      background: #f7f2f2;
+      color: #2b1a1a;
+      line-height: 1.68;
+    }
+
+    .contenedor {
+      max-width: 860px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 12px 48px;
+    }
+
+    /* ── BANNER ── */
+    .banner {
+      background: linear-gradient(135deg, #8b0000 0%, #c0392b 50%, #922b21 100%);
+      border-radius: 0 0 20px 20px;
+      padding: 36px 28px 30px;
+      text-align: center;
+      margin-bottom: 28px;
+      box-shadow: 0 6px 28px rgba(139,0,0,0.38);
+      position: relative;
+      overflow: hidden;
+    }
+    .banner::before {
+      content: ''; position: absolute;
+      top: -50px; right: -50px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.05); border-radius: 50%;
+    }
+    .banner::after {
+      content: ''; position: absolute;
+      bottom: -40px; left: -40px;
+      width: 140px; height: 140px;
+      background: rgba(255,255,255,0.04); border-radius: 50%;
+    }
+    .banner-icono      { font-size: 52px; display: block; margin-bottom: 10px; }
+    .banner h1         {
+      font-size: 1.9em; color: #fff; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.4); margin-bottom: 6px;
+    }
+    .banner-subtitulo  { color: #f9d2ce; font-size: 1.04em; font-weight: 500; }
+    .banner-linea      {
+      width: 60px; height: 3px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 2px; margin: 13px auto 9px;
+    }
+    .banner-inst       { color: rgba(255,255,255,0.7); font-size: 0.83em; font-style: italic; }
+
+    /* ── AVISO OBLIGATORIO ── */
+    .aviso {
+      background: linear-gradient(135deg, #7b0000 0%, #a93226 100%);
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin-bottom: 26px;
+      box-shadow: 0 4px 18px rgba(139,0,0,0.28);
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .aviso-icono   { font-size: 36px; flex-shrink: 0; margin-top: 2px; }
+    .aviso-texto   {}
+    .aviso-etiqueta {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      color: #ffe0e0; font-size: 0.68em; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 2px 10px; border-radius: 20px; margin-bottom: 7px;
+    }
+    .aviso h2   { color: #fff; font-size: 1.02em; font-weight: 700; margin-bottom: 7px; }
+    .aviso p    { color: #fce4e4; font-size: 0.92em; line-height: 1.7; }
+
+    /* ── MENSAJE MOTIVACIONAL ── */
+    .motivacion {
+      background: #fff;
+      border-radius: 13px;
+      border: 1px solid #eacece;
+      border-left: 6px solid #c0392b;
+      padding: 20px 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 2px 10px rgba(139,0,0,0.08);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .motivacion-icono { font-size: 32px; flex-shrink: 0; margin-top: 2px; }
+    .motivacion-etiqueta {
+      font-size: 0.68em; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: #a93226; margin-bottom: 5px;
+    }
+    .motivacion p {
+      color: #3d1111; font-size: 0.93em;
+      line-height: 1.72; font-style: italic;
+    }
+    .motivacion strong { color: #8b0000; font-style: normal; }
+
+    /* ── CONTADOR DE ACTIVIDADES ── */
+    .contador-bloque {
+      background: #fff;
+      border-radius: 13px;
+      border: 1px solid #eacece;
+      box-shadow: 0 2px 10px rgba(139,0,0,0.07);
+      padding: 18px 22px;
+      margin-bottom: 26px;
+    }
+    .contador-titulo {
+      font-size: 0.76em; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: #8b0000; margin-bottom: 14px;
+    }
+    .contador-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 480px) { .contador-grid { grid-template-columns: 1fr 1fr; } }
+
+    .contador-item {
+      background: linear-gradient(135deg, #fdf0f0, #fff5f5);
+      border: 1px solid #e8c8c8;
+      border-radius: 10px;
+      padding: 13px 10px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contador-item::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #8b0000, #e74c3c);
+    }
+    .contador-num  {
+      font-size: 1.9em; font-weight: 800;
+      color: #8b0000; line-height: 1.1;
+      display: block; margin-bottom: 3px;
+    }
+    .contador-label { font-size: 0.75em; color: #7a4a4a; font-weight: 600; }
+
+    /* ── ETIQUETA DE SECCIÓN ── */
+    .seccion-titulo {
+      font-size: 0.77em; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: #8b0000; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .seccion-titulo::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, #c0392b55, transparent);
+    }
+
+    /* ── TARJETAS DE UNIDAD (details/summary) ── */
+    .unidad-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #eacece;
+      box-shadow: 0 2px 8px rgba(139,0,0,0.08);
+      overflow: hidden;
+      margin-bottom: 12px;
+      transition: box-shadow 0.2s;
+    }
+    .unidad-card:hover { box-shadow: 0 4px 18px rgba(139,0,0,0.14); }
+
+    .unidad-card summary {
+      display: flex; align-items: center; gap: 13px;
+      padding: 15px 20px; cursor: pointer;
+      list-style: none;
+      background: linear-gradient(90deg, #fdf0f0 0%, #fff 100%);
+      border-left: 5px solid #c0392b;
+      user-select: none;
+    }
+    .unidad-card summary::-webkit-details-marker { display: none; }
+    .unidad-card summary::marker { display: none; }
+
+    .flecha {
+      font-size: 16px; color: #c0392b;
+      transition: transform 0.3s; flex-shrink: 0;
+    }
+    details[open] .flecha { transform: rotate(90deg); }
+
+    .unidad-num {
+      background: linear-gradient(135deg, #8b0000, #c0392b);
+      color: #fff; font-size: 0.69em; font-weight: 800;
+      padding: 3px 10px; border-radius: 20px;
+      letter-spacing: 0.5px; flex-shrink: 0; white-space: nowrap;
+    }
+    .unidad-icono  { font-size: 21px; flex-shrink: 0; }
+    .unidad-nombre { flex: 1; font-weight: 700; color: #5c0a0a; font-size: 0.95em; }
+    .unidad-badge  {
+      background: #fff0f0; border: 1px solid #e8c8c8;
+      color: #8b0000; font-size: 0.7em; font-weight: 700;
+      padding: 2px 8px; border-radius: 10px;
+      flex-shrink: 0; white-space: nowrap;
+    }
+
+    /* ── CUERPO DE UNIDAD ── */
+    .unidad-cuerpo {
+      padding: 18px 22px 22px;
+      border-top: 1px solid #f3d7d7;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── TARJETAS DE ACTIVIDAD ── */
+    .act-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 520px) { .act-grid { grid-template-columns: 1fr; } }
+
+    .act-item {
+      background: linear-gradient(135deg, #fdf0f0, #fffafa);
+      border: 1px solid #f0d8d8;
+      border-radius: 10px;
+      padding: 14px 15px;
+      position: relative;
+      overflow: hidden;
+    }
+    .act-item::before {
+      content: '';
+      position: absolute; top: 0; left: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #8b0000, #e74c3c);
+    }
+    .act-encabezado {
+      display: flex; align-items: center;
+      gap: 8px; margin-bottom: 8px;
+    }
+    .act-num-badge {
+      background: linear-gradient(135deg, #8b0000, #c0392b);
+      color: #fff; font-size: 0.68em; font-weight: 800;
+      padding: 2px 9px; border-radius: 12px;
+      letter-spacing: 0.5px; flex-shrink: 0;
+    }
+    .act-tipo {
+      font-size: 0.68em; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: #a93226;
+    }
+    .act-titulo {
+      font-size: 0.9em; font-weight: 700;
+      color: #5c0a0a; margin-bottom: 5px;
+    }
+    .act-desc {
+      font-size: 0.82em; color: #6a3a3a; line-height: 1.6;
+    }
+    .act-oblig {
+      display: inline-flex; align-items: center; gap: 4px;
+      margin-top: 9px;
+      background: linear-gradient(90deg, #8b0000, #c0392b);
+      color: #fff; font-size: 0.65em; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 10px;
+    }
+
+    /* ── MEMBRETE FINAL ── */
+    .membrete {
+      background: linear-gradient(135deg, #6b0000 0%, #8b0000 40%, #c0392b 100%);
+      border-radius: 16px;
+      padding: 32px 28px;
+      margin-top: 34px;
+      text-align: center;
+      box-shadow: 0 6px 26px rgba(139,0,0,0.38);
+      position: relative; overflow: hidden;
+    }
+    .membrete::before {
+      content: '';
+      position: absolute; top: -50px; right: -50px;
+      width: 180px; height: 180px;
+      background: rgba(255,255,255,0.05); border-radius: 50%;
+    }
+    .membrete-icono { font-size: 40px; display: block; margin-bottom: 11px; }
+    .membrete h3    {
+      color: #fff; font-size: 1.15em; font-weight: 800;
+      margin-bottom: 11px; text-transform: uppercase; letter-spacing: 1px;
+    }
+    .membrete-cita  {
+      color: #fce4e4; font-style: italic;
+      font-size: 0.96em; line-height: 1.78;
+      max-width: 580px; margin: 0 auto 14px;
+    }
+    .membrete-sep   {
+      width: 50px; height: 2px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px; margin: 13px auto;
+    }
+    .membrete-inst  { color: rgba(255,255,255,0.8); font-size: 0.81em; font-weight: 600; }
+    .membrete-sub   { color: rgba(255,255,255,0.5); font-size: 0.73em; margin-top: 4px; font-style: italic; }
+
+    @media (max-width: 520px) {
+      .banner h1 { font-size: 1.45em; }
+      .aviso { flex-direction: column; gap: 10px; }
+      .membrete { padding: 26px 18px; }
+    }
+  </style>
+</head>
+<body>
+<div class="contenedor">
+
+  <!-- ── BANNER ── -->
+  <div class="banner">
+    <span class="banner-icono">✏️</span>
+    <h1>Actividades del Curso</h1>
+    <p class="banner-subtitulo">Geografía del Ecuador &nbsp;|&nbsp; Licencia Tipo E</p>
+    <div class="banner-linea"></div>
+    <p class="banner-inst">
+      Sindicato Provincial de Choferes Profesionales de Manabí<br>
+      Proceso Formativo para Conductores Profesionales
+    </p>
+  </div>
+
+  <!-- ── AVISO DE OBLIGATORIEDAD ── -->
+  <div class="aviso">
+    <span class="aviso-icono">⚠️</span>
+    <div class="aviso-texto">
+      <span class="aviso-etiqueta">🔴 Cumplimiento Obligatorio</span>
+      <h2>Todas las actividades son de carácter obligatorio</h2>
+      <p>
+        El presente curso cuenta con <strong style="color:#fff;">18 actividades en total</strong>,
+        distribuidas en <strong style="color:#fff;">2 actividades por cada una de las 9 unidades</strong>.
+        La no entrega o incumplimiento de cualquier actividad afecta directamente
+        tu calificación final y puede impedir la aprobación del curso.
+        Dentro de cada unidad encontrarás las instrucciones detalladas para completar
+        cada actividad en los plazos establecidos por el instructor.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── MENSAJE MOTIVACIONAL ── -->
+  <div class="motivacion">
+    <span class="motivacion-icono">💪</span>
+    <div>
+      <p class="motivacion-etiqueta">💬 Mensaje para ti</p>
+      <p>
+        Cada actividad que completes es un paso real hacia tu <strong>Licencia Tipo E</strong>.
+        No las veas como una obligación más: son la oportunidad de demostrar lo que aprendes,
+        de conectar el conocimiento geográfico con tu experiencia en las carreteras del Ecuador
+        y de convertirte en un conductor más seguro, más preparado y más profesional.
+        <strong>Hazlas con dedicación, con honestidad y con orgullo.</strong>
+        ¡Tu esfuerzo hoy protege vidas mañana!
+      </p>
+    </div>
+  </div>
+
+  <!-- ── CONTADOR ── -->
+  <div class="contador-bloque">
+    <p class="contador-titulo">📊 Resumen de Actividades</p>
+    <div class="contador-grid">
+      <div class="contador-item">
+        <span class="contador-num">9</span>
+        <span class="contador-label">Unidades del curso</span>
+      </div>
+      <div class="contador-item">
+        <span class="contador-num">2</span>
+        <span class="contador-label">Actividades por unidad</span>
+      </div>
+      <div class="contador-item">
+        <span class="contador-num">18</span>
+        <span class="contador-label">Actividades en total</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── UNIDADES + ACTIVIDADES ── -->
+  <p class="seccion-titulo">📚 Actividades por Unidad</p>
+  <p style="font-size:0.83em; color:#7a3a3a; margin-bottom:16px;">
+    Haz clic en cada unidad para ver las dos actividades correspondientes.
+  </p>
+
+  <!-- U1 -->
+  <div class="unidad-card">
+    <details>
+      <summary>
+        <span class="flecha">▶</span>
+        <span class="unidad-num">UNIDAD 1</span>
+        <span class="unidad-icono">🌍</span>
+        <span class="unidad-nombre">Geografía — Conceptos Fundamentales</span>
+        <span class="unidad-badge">2 actividades</span>
+      </summary>
+      <div class="unidad-cuerpo">
+        <div class="act-grid">
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 1</span>
+              <span class="act-tipo">📝 Cuestionario</span>
+            </div>
+            <p class="act-titulo">Identificación de conceptos geográficos básicos</p>
+            <p class="act-desc">Responde un cuestionario de selección múltiple sobre las ramas de la geografía, tipos de relieve y pisos climáticos del Ecuador.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 2</span>
+              <span class="act-tipo">🗺️ Actividad práctica</span>
+            </div>
+            <p class="act-titulo">Relieve y clima en mi ruta de trabajo</p>
+            <p class="act-desc">Describe una ruta que hayas recorrido, identifica el tipo de relieve y clima presente e indica las precauciones viales que aplicaste.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- U2 -->
+  <div class="unidad-card">
+    <details>
+      <summary>
+        <span class="flecha">▶</span>
+        <span class="unidad-num">UNIDAD 2</span>
+        <span class="unidad-icono">🇪🇨</span>
+        <span class="unidad-nombre">Ecuador — Datos Generales y Organización</span>
+        <span class="unidad-badge">2 actividades</span>
+      </summary>
+      <div class="unidad-cuerpo">
+        <div class="act-grid">
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 3</span>
+              <span class="act-tipo">📝 Cuestionario</span>
+            </div>
+            <p class="act-titulo">Datos generales y regiones del Ecuador</p>
+            <p class="act-desc">Completa un cuestionario sobre la ubicación, superficie, capital, fronteras y las cuatro regiones naturales del Ecuador.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 4</span>
+              <span class="act-tipo">🗺️ Actividad práctica</span>
+            </div>
+            <p class="act-titulo">Mapa de las regiones del Ecuador</p>
+            <p class="act-desc">En un mapa en blanco del Ecuador, ubica y etiqueta las cuatro regiones naturales, sus provincias y capitales principales.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- U3 -->
+  <div class="unidad-card">
+    <details>
+      <summary>
+        <span class="flecha">▶</span>
+        <span class="unidad-num">UNIDAD 3</span>
+        <span class="unidad-icono">🌊</span>
+        <span class="unidad-nombre">Región Litoral (Costa)</span>
+        <span class="unidad-badge">2 actividades</span>
+      </summary>
+      <div class="unidad-cuerpo">
+        <div class="act-grid">
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 5</span>
+              <span class="act-tipo">📝 Cuestionario</span>
+            </div>
+            <p class="act-titulo">Provincias y vías de la Costa ecuatoriana</p>
+            <p class="act-desc">Identifica las provincias costeras, sus capitales, características productivas y las vías estatales que las conectan.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 6</span>
+              <span class="act-tipo">🚛 Caso vial</span>
+            </div>
+            <p class="act-titulo">Precauciones en rutas costeras</p>
+            <p class="act-desc">Analiza un caso de conducción en la Costa durante la temporada invernal e indica las medidas de seguridad vial que aplicarías.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- U4 -->
+  <div class="unidad-card">
+    <details>
+      <summary>
+        <span class="flecha">▶</span>
+        <span class="unidad-num">UNIDAD 4</span>
+        <span class="unidad-icono">⛰️</span>
+        <span class="unidad-nombre">Región Sierra (Interandina)</span>
+        <span class="unidad-badge">2 actividades</span>
+      </summary>
+      <div class="unidad-cuerpo">
+        <div class="act-grid">
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 7</span>
+              <span class="act-tipo">📝 Cuestionario</span>
+            </div>
+            <p class="act-titulo">Volcanes, altitudes y la Panamericana E35</span></p>
+            <p class="act-desc">Responde preguntas sobre los principales volcanes y nevados, altitudes de las provincias serranas y los tramos críticos de la vía E35.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 8</span>
+              <span class="act-tipo">🚛 Caso vial</span>
+            </div>
+            <p class="act-titulo">Conducción segura en páramo y neblina</p>
+            <p class="act-desc">Describe las acciones que tomarías al conducir en la Panamericana E35 bajo condiciones de neblina densa, hielo o actividad volcánica cercana.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- U5 -->
+  <div class="unidad-card">
+    <details>
+      <summary>
+        <span class="flecha">▶</span>
+        <span class="unidad-num">UNIDAD 5</span>
+        <span class="unidad-icono">🌿</span>
+        <span class="unidad-nombre">Región Amazónica (Oriente)</span>
+        <span class="unidad-badge">2 actividades</span>
+      </summary>
+      <div class="unidad-cuerpo">
+        <div class="act-grid">
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 9</span>
+              <span class="act-tipo">📝 Cuestionario</span>
+            </div>
+            <p class="act-titulo">Provincias amazónicas y Troncal E45</p>
+            <p class="act-desc">Identifica las seis provincias de la Amazonía, sus capitales, extensión territorial y los tramos de la Troncal Amazónica E45.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 10</span>
+              <span class="act-tipo">🚛 Caso vial</span>
+            </div>
+            <p class="act-titulo">Planificación de ruta en la Amazonía</p>
+            <p class="act-desc">Elabora un listado de preparativos, precauciones y equipamiento necesario para realizar una ruta de carga pesada por la Amazonía ecuatoriana.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- U6 -->
+  <div class="unidad-card">
+    <details>
+      <summary>
+        <span class="flecha">▶</span>
+        <span class="unidad-num">UNIDAD 6</span>
+        <span class="unidad-icono">🏝️</span>
+        <span class="unidad-nombre">Región Insular — Galápagos</span>
+        <span class="unidad-badge">2 actividades</span>
+      </summary>
+      <div class="unidad-cuerpo">
+        <div class="act-grid">
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 11</span>
+              <span class="act-tipo">📝 Cuestionario</span>
+            </div>
+            <p class="act-titulo">Galápagos: datos, fauna y regulaciones</p>
+            <p class="act-desc">Responde un cuestionario sobre la ubicación, islas, fauna endémica y normativas especiales de transporte en la Región Insular.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 12</span>
+              <span class="act-tipo">💡 Reflexión</span>
+            </div>
+            <p class="act-titulo">¿Por qué Galápagos exige normas únicas de movilidad?</p>
+            <p class="act-desc">Redacta una breve reflexión sobre la relación entre la biodiversidad endémica de Galápagos y las restricciones vehiculares vigentes en las islas.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- U7 -->
+  <div class="unidad-card">
+    <details>
+      <summary>
+        <span class="flecha">▶</span>
+        <span class="unidad-num">UNIDAD 7</span>
+        <span class="unidad-icono">💼</span>
+        <span class="unidad-nombre">Economía y Recursos del Ecuador</span>
+        <span class="unidad-badge">2 actividades</span>
+      </summary>
+      <div class="unidad-cuerpo">
+        <div class="act-grid">
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 13</span>
+              <span class="act-tipo">📝 Cuestionario</span>
+            </div>
+            <p class="act-titulo">Sectores económicos y exportaciones</p>
+            <p class="act-desc">Identifica los tres sectores económicos del Ecuador, los principales productos de exportación y las centrales hidroeléctricas más importantes del país.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 14</span>
+              <span class="act-tipo">🚛 Caso vial</span>
+            </div>
+            <p class="act-titulo">El transporte y la cadena productiva</p>
+            <p class="act-desc">Explica cómo el transporte de carga tipo E contribuye a la economía ecuatoriana, mencionando al menos tres productos o sectores que dependen del transporte pesado.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- U8 -->
+  <div class="unidad-card">
+    <details>
+      <summary>
+        <span class="flecha">▶</span>
+        <span class="unidad-num">UNIDAD 8</span>
+        <span class="unidad-icono">🛣️</span>
+        <span class="unidad-nombre">Orientación Geográfica y Red Vial Nacional</span>
+        <span class="unidad-badge">2 actividades</span>
+      </summary>
+      <div class="unidad-cuerpo">
+        <div class="act-grid">
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 15</span>
+              <span class="act-tipo">📝 Cuestionario</span>
+            </div>
+            <p class="act-titulo">Ejes viales y tipos de carreteras</p>
+            <p class="act-desc">Identifica los principales ejes viales del Ecuador (E35, E15, E45, E25, entre otros), sus recorridos y las regiones que conectan.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 16</span>
+              <span class="act-tipo">🗺️ Actividad práctica</span>
+            </div>
+            <p class="act-titulo">Trazado de ruta interprovincial con GPS</p>
+            <p class="act-desc">Planifica una ruta de carga entre dos provincias asignadas por el instructor, indicando el eje vial, el tipo de carretera, las distancias aproximadas y los riesgos del trayecto.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- U9 -->
+  <div class="unidad-card">
+    <details>
+      <summary>
+        <span class="flecha">▶</span>
+        <span class="unidad-num">UNIDAD 9</span>
+        <span class="unidad-icono">🦋</span>
+        <span class="unidad-nombre">Biodiversidad y Áreas Protegidas</span>
+        <span class="unidad-badge">2 actividades</span>
+      </summary>
+      <div class="unidad-cuerpo">
+        <div class="act-grid">
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 17</span>
+              <span class="act-tipo">📝 Cuestionario</span>
+            </div>
+            <p class="act-titulo">Áreas protegidas y biodiversidad por región</p>
+            <p class="act-desc">Responde preguntas sobre las principales áreas naturales protegidas del Ecuador, la flora y fauna representativa de cada región y el mar territorial ecuatoriano.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+          <div class="act-item">
+            <div class="act-encabezado">
+              <span class="act-num-badge">ACT 18</span>
+              <span class="act-tipo">💡 Reflexión</span>
+            </div>
+            <p class="act-titulo">Conducción responsable y medio ambiente</p>
+            <p class="act-desc">Redacta una reflexión sobre cómo el conductor profesional puede contribuir a la protección de la biodiversidad y las áreas naturales del Ecuador durante su trabajo diario.</p>
+            <span class="act-oblig">✅ Obligatoria</span>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ── MEMBRETE FINAL ── -->
+  <div class="membrete">
+    <span class="membrete-icono">🏆</span>
+    <h3>¡Tu Esfuerzo Tiene Destino!</h3>
+    <p class="membrete-cita">
+      "Completar cada actividad no es solo cumplir un requisito:
+      es construir el conocimiento que te hará un conductor más seguro,
+      más confiable y más valioso en las carreteras del Ecuador.
+      ¡18 actividades, 18 pasos hacia tu Licencia Tipo E!"
+    </p>
+    <div class="membrete-sep"></div>
+    <p class="membrete-inst">Sindicato Provincial de Choferes Profesionales de Manabí</p>
+    <p class="membrete-sub">
+      Proceso Formativo · Licencia Tipo E · Geografía del Ecuador<br>
+      Material pedagógico de uso exclusivo para formación profesional
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
